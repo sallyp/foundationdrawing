@@ -4,6 +4,7 @@
 **Author:** Sally Peck  
 **Version:** 1.0, **License:** MIT  
 
+DOI: 10.5281/zenodo.17918142
 
 ## Brief Overview
 
