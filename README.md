@@ -4,7 +4,10 @@
 **Author:** Sally Peck  
 **Version:** 1.0, **License:** MIT  
 
-DOI: 10.5281/zenodo.17918142
+[DOI:10.5281/zenodo.17918142](https://doi.org/10.5281/zenodo.17918142)
+
+This code accompanies the paper: 
+[DOI:10.5281/zenodo.17918145](https://doi.org/10.5281/zenodo.17918145)
 
 ## Brief Overview
 
