@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------------
 # Foundation Drawing - Deriving the Standard Model from Pure Geometry.
 # Author: (c) 2025 Sally Peck.
+# https://github.com/sallyp/foundationdrawing/
 # -----------------------------------------------------------------------------
 
 from decimal import Decimal, getcontext
@@ -16,12 +17,23 @@ ZERO = 0                      # Additive identity
 DECIMAL_ZERO = 0.0            # Float zero for returns
 UNITY = 1                     # Multiplicative identity / one complete shape
 DECIMAL_UNITY = 1.0           # Float unity for division
+UNITY_D = Decimal(1)          # Decimal unity for high-precision division
 
 PI = math.pi
 PI_DECIMAL = Decimal('3.14159265358979323846264338327950288419716939937510')
 
 SQRT3 = math.sqrt(3)
 SQRT3_DECIMAL = Decimal(3).sqrt()
+
+# -----------------------------------------------------------------------------
+# Lucas Number Sequence Constants
+# -----------------------------------------------------------------------------
+LUCAS_L0 = 2                  # First Lucas number L(0) = 2
+LUCAS_L1 = 1                  # Second Lucas number L(1) = 1
+LUCAS_L0_D = Decimal(LUCAS_L0)
+LUCAS_L1_D = Decimal(LUCAS_L1)
+LUCAS_OFFSET_3 = 3            # Offset for Lucas pattern: L(n+3)
+LUCAS_OFFSET_4 = 4            # Offset for Lucas pattern: L(n+4)
 
 # -----------------------------------------------------------------------------
 # Level 1: Basic Counting (directly from primitives)
@@ -39,7 +51,12 @@ VERTICES_TRIANGLE_D = Decimal(VERTICES_TRIANGLE)
 DIMENSION_1D = 1              # 1D phase space (line/arc)
 DIMENSION_2D = 2              # 2D phase space (plane) - USE FOR **2
 DIMENSION_3D = 3              # 3D phase space (volume) - USE FOR **3
-DIMENSION_FACTOR = 4          # 2² = phase space dimension factor for EM
+DIMENSION_4D = 4              # 4D phase space - USE FOR **4
+DIMENSION_5D = 5              # 5D phase space - USE FOR **5
+DIMENSION_6D = 6              # 6D phase space - USE FOR **6
+DIMENSION_7D = 7              # 7D phase space - USE FOR **7
+DIMENSION_8D = 8              # 8D phase space - USE FOR **8
+DIMENSION_FACTOR = 4          # 2^2 = phase space dimension factor for EM
 
 # Decimal versions
 DIMENSION_FACTOR_D = Decimal(DIMENSION_FACTOR)
@@ -70,8 +87,9 @@ FLAT_PLUS_CURVED_D = Decimal(FLAT_PLUS_CURVED)
 # -----------------------------------------------------------------------------
 # Level 5: Second-Order Combinations
 # -----------------------------------------------------------------------------
-FLAT_TIMES_VERTICES = TRIANGLE_FLAT * VERTICES_TRIANGLE       # 6 × 3 = 18
-EDGE_TIMES_FLAT = TRIANGLES_PER_EDGE * TRIANGLE_FLAT          # 2 × 6 = 12
+FLAT_TIMES_VERTICES = TRIANGLE_FLAT * VERTICES_TRIANGLE       # 6 x 3 = 18
+FLAT_TIMES_VERTICES_D = Decimal(FLAT_TIMES_VERTICES)
+EDGE_TIMES_FLAT = TRIANGLES_PER_EDGE * TRIANGLE_FLAT          # 2 x 6 = 12
 FLAT_SQUARED = TRIANGLE_FLAT * TRIANGLE_FLAT                  # 6² = 36
 VERTICES_CUBED = VERTICES_TRIANGLE ** VERTICES_TRIANGLE       # 3³ = 27
 VERTICES_FOURTH = VERTICES_CUBED * VERTICES_TRIANGLE          # 3⁴ = 81
@@ -127,9 +145,14 @@ ALPHA_CONFIG_NORM_D = FLAT_PLUS_CURVED_D
 # For αs formula
 STRONG_OFFSET = FLAT_PLUS_CURVED_PLUS_FLAT        # 17 = 11 + 6
 
-# For sin²θ_W formula
-WEAK_ENDPOINT_COEFF = VERTICES_SHARED             # 2π coefficient
-WEAK_DENOMINATOR_BASE = FLAT_TIMES_VERTICES       # 18 = 6 × 3
+# For sin^2(theta_W) formula
+WEAK_ENDPOINT_COEFF = VERTICES_SHARED             # 2*pi coefficient
+WEAK_DENOMINATOR_BASE = FLAT_TIMES_VERTICES       # 18 = 6 x 3
+
+# Total Geometry: sum of fundamental combinations
+# 11 (FLAT_PLUS_CURVED) + 7 (CURVED_PLUS_SHARED) + 8 (VERTICES_PLUS_CURVED) + 3 (VERTICES_TRIANGLE)
+GEOMETRIC_TOTAL = FLAT_PLUS_CURVED + CURVED_PLUS_SHARED + VERTICES_PLUS_CURVED + VERTICES_TRIANGLE  # 29
 
 # For percentage calculations
 PERCENT_FACTOR = 100
+

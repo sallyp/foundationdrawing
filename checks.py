@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------------
 # Foundation Drawing - Deriving the Standard Model from Pure Geometry.
 # Author: (c) 2025 Sally Peck.
+# https://github.com/sallyp/foundationdrawing/
 # -----------------------------------------------------------------------------
 
 from decimal import getcontext
