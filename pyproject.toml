@@ -1,0 +1,17 @@
+[project]
+name = "foundationdrawing"
+version = "1.2.0"
+description = "Deriving the Standard Model from Pure Geometry"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Sally Peck"}
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/sallyp/foundationdrawing"
+
+[tool.setuptools]
+py-modules = ["standardmodel", "foundationdrawing", "constants", "checks", "alpha_higher_orders"]
